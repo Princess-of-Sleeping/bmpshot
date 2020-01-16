@@ -19,7 +19,3 @@ Note that this was only tested with retail SceShell. If, for some reason, you ha
 ## Usage
 
 Press PS button + Start to take a screenshot. You can access screenshots with the Photos app, or from `ux0:picture/SCREENSHOT`.
-
-## Additional notes
-
-To compile this plugin from source, you need a custom build of libpng (the one in vdpm will not work). Check out `libpng` directory for a working `VITABUILD`.
