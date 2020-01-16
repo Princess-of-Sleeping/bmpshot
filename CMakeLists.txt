@@ -8,25 +8,24 @@ if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
   endif()
 endif()
 
-project(pngshot)
+project(bmpshot)
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,-q -Wall -O3 -nostdlib -std=c99 -fno-strict-aliasing")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti -fno-exceptions")
 
-add_executable(pngshot
+add_executable(bmpshot
   main.c
 )
 
-target_link_libraries(pngshot
-  png16
-  z
-  k
-  m
-  gcc
+target_link_libraries(bmpshot
   taihen_stub
   ScePaf_stub_weak
-  SceSysmem_stub
+  SceLibKernel_stub
+  SceRegistryMgr_stub
 )
 
-vita_create_self(pngshot.suprx pngshot CONFIG exports.yml UNSAFE)
+vita_create_self(bmpshot.suprx bmpshot
+  CONFIG exports.yml
+  UNSAFE
+)
